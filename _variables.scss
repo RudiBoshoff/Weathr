@@ -1,0 +1,36 @@
+// Font
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+
+// Clear
+$color--primary: #2d56a7;
+$color--secondary: #3d98cb;
+
+// Menu
+$color--primary: #516395;
+$color--secondary: #614385;
+
+$opacity--light: 0.6;
+
+// Font Size
+$font--size: (
+  "small": 1.8rem,
+  "normal": 2.4rem,
+  "large": 3.6rem,
+  "x-large": 7.2rem,
+);
+
+@function fontSize($option: normal) {
+  @return map-get($font--size, $option);
+}
+
+// Font Weight
+$font--weight: (
+  "thin": 300,
+  "normal": 400,
+  "bold": 600,
+  "x-bold": 700,
+);
+
+@function fontWeight($option: normal) {
+  @return map-get($font--weight, $option);
+}

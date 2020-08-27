@@ -1,0 +1,362 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0 auto;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.8rem;
+  color: white;
+  background: -webkit-gradient(linear, left top, left bottom, from(#516395), to(#614385)) no-repeat;
+  background: linear-gradient(#516395, #614385) no-repeat;
+}
+
+.container {
+  width: 100vw;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.flex, .flex--col, .main, .temperature {
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.flex--col, .main {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.5em;
+}
+
+nav .logo {
+  color: #fff;
+  font-size: 3.6rem;
+  font-weight: 600;
+  position: relative;
+  cursor: pointer;
+}
+
+nav .logo::after {
+  content: "";
+  display: block;
+  background: white;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 10px;
+  right: -15px;
+}
+
+nav .menu > i {
+  font-size: 2.4rem;
+  cursor: pointer;
+}
+
+.main {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.main__header {
+  margin-top: 1em;
+  text-align: center;
+}
+
+.main__location {
+  font-size: 2.4rem;
+}
+
+.main__date {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.main__container {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "graphic graphic" "temperature range";
+  place-items: center;
+  gap: 0.5em;
+  padding: 1em;
+  max-width: 500px;
+  cursor: pointer;
+}
+
+.graphic {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: graphic;
+  padding: 1em;
+  text-align: center;
+  opacity: 0.6;
+}
+
+.graphic__description {
+  font-size: 2.4rem;
+  white-space: nowrap;
+}
+
+.temperature {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: temperature;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  font-size: 7.2rem;
+  max-width: 200px;
+}
+
+.temperature__value {
+  margin-right: 10px;
+}
+
+.temperature__unit {
+  opacity: 0.6;
+  font-weight: 300;
+}
+
+.range {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: range;
+  text-align: center;
+  padding: 1em;
+  font-size: 2.4rem;
+  opacity: 0.6;
+  max-width: 50px;
+}
+
+.info__heading {
+  text-align: center;
+  margin: 1em 0;
+  font-weight: 300;
+}
+
+.info .cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (100px)[3];
+      grid-template-columns: repeat(3, 100px);
+  -ms-grid-rows: (150px)[2];
+      grid-template-rows: repeat(2, 150px);
+  gap: 1em;
+  margin-bottom: 6em;
+}
+
+.info .card {
+  background: rgba(255, 255, 255, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.info .card__icon {
+  height: 30px;
+}
+
+.info .card__heading {
+  font-size: 1.8rem;
+}
+
+.info .card__value {
+  font-size: 1.8rem;
+}
+
+.realfeel,
+.sunrise {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+}
+
+.wind,
+.sunset {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+}
+
+.humidity,
+.pressure {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3/4;
+}
+
+.realfeel,
+.wind,
+.humidity {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+}
+
+.sunrise,
+.sunset,
+.pressure {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+}
+
+.footer .search {
+  width: 85%;
+  -webkit-transition: all 0.5s 0.2s ease;
+  transition: all 0.5s 0.2s ease;
+  border: none;
+  background: rgba(255, 255, 255, 0);
+  padding: 0.5em 1em;
+  font-size: 1.8rem;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: scaleX(0) translate(-50%, -50%);
+          transform: scaleX(0) translate(-50%, -50%);
+}
+
+.footer .search--toggle {
+  display: block;
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+}
+
+.footer .search--toggle:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.footer .search--toggle > i {
+  font-size: 2.4rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: black;
+}
+
+.footer .grow {
+  -webkit-transform: scaleX(1) translate(-50%, -50%);
+          transform: scaleX(1) translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.footer .ripple {
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-name: ripple;
+          animation-name: ripple;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+@-webkit-keyframes ripple {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  20% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  50% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  20% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  50% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .main__container {
+        grid-template-areas: "graphic temperature range";
+  }
+}
+/*# sourceMappingURL=style.css.map */

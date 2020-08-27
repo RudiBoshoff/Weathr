@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weathr</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="logo">Weathr</div>
+        <div class="menu"><i class="fas fa-bars"></i></div>
+      </nav>
+
+      <main class="main">
+        <div class="main__header">
+          <h1 class="main__location js-location">
+            Lynnwood
+          </h1>
+          <h2 class="main__date">Today, <span class="js-time"></span></h2>
+        </div>
+
+        <div class="main__container js-temperature-toggle">
+          <div class="graphic">
+            <canvas
+              class="graphic__icon js-icon"
+              width="55"
+              height="55"
+            ></canvas>
+            <p class="graphic__description js-description"></p>
+          </div>
+
+          <div class="temperature">
+            <p class="temperature__value js-temperature">13</p>
+            <span class="temperature__unit js-temperature-unit">°C</span>
+          </div>
+
+          <div class="range">
+            <p class="range__max js-temperature-max">15</p>
+            <p class="range__min js-temperature-min">5</p>
+          </div>
+        </div>
+
+        <div class="info">
+          <h2 class="info__heading">Details</h2>
+          <div class="cards">
+            <div class="card realfeel">
+              <img class="card__icon" src="./icons/realfeel.svg" />
+              <p class="card__heading">Real Feel</p>
+              <div class="card__value js-realfeel"></div>
+            </div>
+            <div class="card wind">
+              <img class="card__icon" src="./icons/wind.svg" />
+              <p class="card__heading">Wind</p>
+              <div class="card__value js-wind"></div>
+            </div>
+            <div class="card humidity">
+              <img class="card__icon" src="./icons/humidity.svg" />
+              <p class="card__heading">Humidity</p>
+              <div class="card__value js-humidity"></div>
+            </div>
+            <div class="card sunrise">
+              <img class="card__icon" src="./icons/sunrise.svg" />
+              <p class="card__heading">Sunrise</p>
+              <div class="card__value js-sunrise"></div>
+            </div>
+            <div class="card sunset">
+              <img class="card__icon" src="./icons/sunset.svg" />
+              <p class="card__heading">Sunset</p>
+              <div class="card__value js-sunset"></div>
+            </div>
+            <div class="card pressure">
+              <img class="card__icon" src="./icons/pressure.svg" />
+              <p class="card__heading">Pressure</p>
+              <div class="card__value js-pressure"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <input
+          class="search"
+          type="search"
+          placeholder="Find a City..."
+          name="search"
+          autocomplete="off"
+        />
+        <span class="js-search search--toggle"
+          ><i class="fa fa-search"></i
+        ></span>
+      </footer>
+    </div>
+    <script src="/skycons.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>

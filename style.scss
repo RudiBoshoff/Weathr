@@ -1,0 +1,278 @@
+@import "variables";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0 auto;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.8rem;
+  color: white;
+  background: linear-gradient($color--primary, $color--secondary) no-repeat;
+}
+
+.container {
+  width: 100vw;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.flex {
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+
+  &--col {
+    @extend .flex;
+    flex-direction: column;
+  }
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em;
+
+  .logo {
+    color: #fff;
+    font-size: fontSize(large);
+    font-weight: fontWeight(bold);
+    position: relative;
+    cursor: pointer;
+    &::after {
+      content: "";
+      display: block;
+      background: white;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 10px;
+      right: -15px;
+    }
+  }
+
+  .menu > i {
+    font-size: fontSize(normal);
+    cursor: pointer;
+  }
+}
+
+.main {
+  @extend .flex--col;
+  user-select: none;
+  &__header {
+    margin-top: 1em;
+    text-align: center;
+  }
+  &__location {
+    font-size: fontSize(normal);
+  }
+  &__date {
+    font-size: fontSize(small);
+    font-weight: fontWeight(normal);
+  }
+  &__container {
+    display: grid;
+    grid-template-areas:
+      "graphic graphic"
+      "temperature range";
+    place-items: center;
+    gap: 0.5em;
+    padding: 1em;
+    max-width: 500px;
+    cursor: pointer;
+  }
+}
+
+.graphic {
+  grid-area: graphic;
+  padding: 1em;
+  text-align: center;
+  opacity: $opacity--light;
+  &__icon {
+  }
+  &__description {
+    font-size: fontSize(normal);
+    white-space: nowrap;
+  }
+}
+
+.temperature {
+  grid-area: temperature;
+  @extend .flex;
+  flex-wrap: nowrap;
+  font-size: fontSize(x-large);
+  max-width: 200px;
+  &__value {
+    margin-right: 10px;
+  }
+  &__unit {
+    opacity: $opacity--light;
+    font-weight: fontWeight(thin);
+  }
+}
+
+.range {
+  grid-area: range;
+  text-align: center;
+  padding: 1em;
+  font-size: fontSize(normal);
+  opacity: $opacity--light;
+  max-width: 50px;
+  &__min {
+  }
+  &__max {
+  }
+}
+
+.info {
+  &__heading {
+    text-align: center;
+    margin: 1em 0;
+    font-weight: fontWeight(thin);
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(2, 150px);
+    gap: 1em;
+    margin-bottom: 6em;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    &__icon {
+      height: 30px;
+    }
+
+    &__heading {
+      font-size: fontSize(small);
+    }
+
+    &__value {
+      font-size: fontSize(small);
+    }
+  }
+}
+
+.realfeel,
+.sunrise {
+  grid-column: 1/2;
+}
+
+.wind,
+.sunset {
+  grid-column: 2/3;
+}
+
+.humidity,
+.pressure {
+  grid-column: 3/4;
+}
+
+.realfeel,
+.wind,
+.humidity {
+  grid-row: 1/2;
+}
+
+.sunrise,
+.sunset,
+.pressure {
+  grid-row: 2/3;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+
+  .search {
+    width: 85%;
+    transition: all 0.5s 0.2s ease;
+    border: none;
+    background: rgba(255, 255, 255, 0);
+    padding: 0.5em 1em;
+    font-size: fontSize(small);
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: scaleX(0) translate(-50%, -50%);
+    &--toggle {
+      display: block;
+      position: absolute;
+      background-color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      right: 20px;
+      bottom: 20px;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.1);
+        transition-duration: 0.3s;
+      }
+      & > i {
+        font-size: fontSize(normal);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: black;
+      }
+    }
+  }
+}
+
+.footer .grow {
+  transform: scaleX(1) translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.footer .ripple {
+  animation-iteration-count: 1;
+  animation-name: ripple;
+  animation-duration: 1s;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .main__container {
+    grid-template-areas: "graphic temperature range";
+  }
+}
