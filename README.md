@@ -6,3 +6,8 @@ TODO:
  1. JS needs to be refactored.
  2. Desktop styling needs to be adjusted with media queries. (search bar is ugly)
  3. Site needs to be hosted on heroku. 
+ 4. Loading animation when opening app
+
+Limitations: 
+ 1. API does not allow for week prediction at current cost (free)
+ 2. Sunset and sunrise times do not adjust based on user location. So times are in GMT without accounting for local timezone.
