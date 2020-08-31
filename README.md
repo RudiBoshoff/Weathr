@@ -4,7 +4,7 @@ Mobile First Weathr app that uses open-weather api to update values. The app has
 Screen Shots:
 <p align="center">
   <img src="https://user-images.githubusercontent.com/30492583/91685943-26e0b280-eb5c-11ea-9632-1bc83229455d.png">
-  <img src="https://user-images.githubusercontent.com/30492583/91686104-b4bc9d80-eb5c-11ea-85f6-6d667025c144.png">
+  <img src="https://user-images.githubusercontent.com/30492583/91686338-4af0c380-eb5d-11ea-9833-5330f032f41e.png">
 </p>
 
 Work in progress.
