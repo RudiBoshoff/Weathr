@@ -14,7 +14,7 @@ Screen Shots:
 Work in progress.
 TODO:
 
-1.  Site needs to be hosted on heroku.
+1.  Site needs to be hosted on heroku. [Weathr](https://rudi-boshoff-weathr.herokuapp.com/)
 2.  Loading animation when opening app
 3.  Logo currently doesn't do anything when you click on it.
 4.  Implement slow loading of numbers (animation).
