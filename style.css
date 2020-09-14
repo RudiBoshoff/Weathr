@@ -358,4 +358,28 @@ nav .menu > i {
         grid-template-areas: "graphic temperature range";
   }
 }
+
+@media only screen and (min-width: 900px) {
+  .footer {
+    bottom: unset;
+    top: 0;
+    left: unset;
+    right: 1.5em;
+    width: 90%;
+  }
+  .footer .search {
+    width: 30%;
+    left: unset;
+    right: -10%;
+  }
+  .footer .grow {
+    background: rgba(255, 255, 255, 0.3);
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .footer .search {
+    right: -13%;
+  }
+}
 /*# sourceMappingURL=style.css.map */
