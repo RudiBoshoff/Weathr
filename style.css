@@ -272,22 +272,22 @@ nav .menu > i {
 }
 
 .footer .search::-webkit-input-placeholder {
-  color: white;
+  color: #252525;
   opacity: 1;
 }
 
 .footer .search:-ms-input-placeholder {
-  color: white;
+  color: #252525;
   opacity: 1;
 }
 
 .footer .search::-ms-input-placeholder {
-  color: white;
+  color: #252525;
   opacity: 1;
 }
 
 .footer .search::placeholder {
-  color: white;
+  color: #252525;
   opacity: 1;
 }
 
@@ -321,9 +321,10 @@ nav .menu > i {
 }
 
 .footer .grow {
+  color: black;
   -webkit-transform: scaleX(1) translate(-50%, -50%);
           transform: scaleX(1) translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .footer .ripple {

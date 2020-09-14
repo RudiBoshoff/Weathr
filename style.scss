@@ -220,7 +220,7 @@ nav {
     transform: scaleX(0) translate(-50%, -50%);
 
     &::placeholder {
-      color: white;
+      color: rgb(37, 37, 37);
       opacity: 1;
     }
 
@@ -251,8 +251,9 @@ nav {
 }
 
 .footer .grow {
+  color: black;
   transform: scaleX(1) translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .footer .ripple {
