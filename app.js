@@ -4,9 +4,8 @@ class Time {
     const [hours, minutes, seconds] = [
       this.formatTime(today.getHours()),
       this.formatTime(today.getMinutes()),
-      this.formatTime(today.getSeconds()),
     ];
-    return `${hours}:${minutes}:${seconds}`;
+    return `${hours}:${minutes}`;
   }
   setTime() {
     const time = document.querySelector(".js-time");
@@ -232,6 +231,11 @@ function initialize() {
   api.setApiAddress();
   api.fetchApi();
   displayValues();
+  setInterval(() => {
+    api.setApiAddress();
+    api.fetchApi();
+    displayValues();
+  }, 600000);
 }
 
 const time = new Time();
@@ -253,7 +257,6 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   searchToggle.addEventListener("click", () => {
-    // search button animation
     searchToggle.classList.toggle("ripple");
     search.classList.toggle("grow");
     if (search.classList.contains("grow")) {
@@ -273,20 +276,3 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-//
-
-// const getPosition = function () {
-//     return new Promise(function (resolve, reject) {
-//         navigator.geolocation.getCurrentPosition(resolve, reject);
-//     });
-// };
-
-// getPosition()
-//     .then((position) => {
-//         weather.lat = position.coords.latitude;
-//         weather.long = position.coords.longitude;
-//     })
-//     .catch((err) => {
-//         console.error(err.message);
-//     });
