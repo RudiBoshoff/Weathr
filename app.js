@@ -24,24 +24,9 @@ class Time {
 
 class Weather {
   constructor() {
-    this.temperature;
-    this.min;
-    this.max;
     this.lat = 51.5074;
     this.long = -0.1278;
-    this.real_feel;
-    this.humidity;
-    this.pressure;
-    this.description;
-    this.icon;
-    this.icon_ID;
-    this.name;
-    this.wind_speed;
-    this.sunrise;
-    this.sunset;
     this.units = "metric";
-    this.query;
-    this.timezone;
   }
 
   setValues(data) {
