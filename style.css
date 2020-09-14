@@ -271,6 +271,26 @@ nav .menu > i {
           transform: scaleX(0) translate(-50%, -50%);
 }
 
+.footer .search::-webkit-input-placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.footer .search:-ms-input-placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.footer .search::-ms-input-placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.footer .search::placeholder {
+  color: white;
+  opacity: 1;
+}
+
 .footer .search--toggle {
   display: block;
   position: absolute;

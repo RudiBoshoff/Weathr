@@ -218,6 +218,12 @@ nav {
     top: 50%;
     left: 50%;
     transform: scaleX(0) translate(-50%, -50%);
+
+    &::placeholder {
+      color: white;
+      opacity: 1;
+    }
+
     &--toggle {
       display: block;
       position: absolute;
