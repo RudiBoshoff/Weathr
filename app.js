@@ -42,6 +42,7 @@ class Weather {
     this.description = data.weather[0].description;
     this.icon_ID = data.weather[0].icon;
     this.timezone = data.timezone;
+    this.country = data.sys.country;
   }
 
   setIcon() {
@@ -189,7 +190,7 @@ function displayValues() {
   }
 
   //   without units
-  location.textContent = weather.name;
+  location.textContent = `${weather.name}, ${weather.country}`;
   description.textContent = weather.description;
   temperature.textContent = weather.temperature;
   realFeel.textContent = `${weather.real_feel} °`;
