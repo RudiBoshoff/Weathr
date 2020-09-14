@@ -126,6 +126,7 @@ nav .menu > i {
   padding: 1em;
   max-width: 500px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .graphic {
@@ -309,6 +310,7 @@ nav .menu > i {
   right: 20px;
   bottom: 20px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .footer .search--toggle:hover {

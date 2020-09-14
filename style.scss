@@ -103,6 +103,7 @@ nav {
     padding: 1em;
     max-width: 500px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
@@ -242,6 +243,7 @@ nav {
       right: 20px;
       bottom: 20px;
       cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
       &:hover {
         transform: scale(1.1);
         transition-duration: 0.3s;
