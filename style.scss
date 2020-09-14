@@ -291,6 +291,10 @@ nav {
   .main__container {
     grid-template-areas: "graphic temperature range";
   }
+
+  .info .cards {
+    grid-template-columns: repeat(3, 130px);
+  }
 }
 
 @media only screen and (min-width: 900px) {
