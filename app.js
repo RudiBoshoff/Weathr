@@ -262,11 +262,13 @@ window.addEventListener("DOMContentLoaded", () => {
     if (search.classList.contains("grow")) {
       search.focus();
     } else {
-      weather.query = search.value;
-      api.setApiAddress();
-      api.fetchApi();
-      displayValues();
-      search.value = "";
+      if (search.value != "") {
+        weather.query = search.value;
+        api.setApiAddress();
+        api.fetchApi();
+        displayValues();
+        search.value = "";
+      }
       search.blur();
     }
   });
