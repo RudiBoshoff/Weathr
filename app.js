@@ -265,6 +265,7 @@ function toggleUnits() {
   } else {
     weather.units = "metric";
   }
+  localStorage.setItem("units", weather.units);
 }
 
 function setUserPosition() {
@@ -284,9 +285,18 @@ function checkGeolocation() {
 
 function initialize() {
   time.setTime();
-  checkGeolocation();
-  api.setApiAddress();
-  api.fetchApi();
+  if (localStorage.getItem("city")) {
+    weather.query = localStorage.getItem("city");
+    if (localStorage.getItem("units")) {
+      weather.units = localStorage.getItem("units");
+    }
+    api.setApiAddress();
+    api.fetchApi();
+  } else {
+    checkGeolocation();
+    api.setApiAddress();
+    api.fetchApi();
+  }
   setInterval(() => {
     api.setApiAddress();
     api.fetchApi();
@@ -318,6 +328,7 @@ window.addEventListener("DOMContentLoaded", () => {
     } else {
       if (search.value != "") {
         weather.query = search.value;
+        localStorage.setItem("city", weather.query);
         api.setApiAddress();
         api.fetchApi();
         search.value = "";
@@ -329,6 +340,7 @@ window.addEventListener("DOMContentLoaded", () => {
   search.addEventListener("keyup", (e) => {
     if (e.key === "Enter") {
       weather.query = search.value;
+      localStorage.setItem("city", weather.query);
       api.setApiAddress();
       api.fetchApi();
       search.value = "";
