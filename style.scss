@@ -60,6 +60,7 @@ nav {
     font-weight: fontWeight(bold);
     position: relative;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
     &::after {
       content: "";
       display: block;

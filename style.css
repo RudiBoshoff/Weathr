@@ -77,6 +77,7 @@ nav .logo {
   font-weight: 600;
   position: relative;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 nav .logo::after {
