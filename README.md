@@ -14,11 +14,10 @@ Screen Shots:
 Work in progress.
 TODO:
 
-1.  Site needs to be hosted on heroku. [Weathr](https://rudi-boshoff-weathr.herokuapp.com/)
-2.  Loading animation when opening app
+1.  Site needs to be hosted on heroku. (implemented) [Weathr](https://rudi-boshoff-weathr.herokuapp.com/)
+2.  Loading animation of numbers (implemented)
 3.  Logo currently doesn't do anything when you click on it.
-4.  Implement slow loading of numbers (animation).
-5.  Change app colour based on weather and time (rain : blue, snow: white, night: dark etc.)
+4.  Change app colour based on weather and time (rain : blue, snow: white, night: dark etc.)
 
 Limitations:
 

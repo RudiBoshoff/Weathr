@@ -162,6 +162,58 @@ class API {
   }
 }
 
+function animateNumbers(targetVal, targetElement) {
+  // animateNumbers Logic
+  // check if target value is negative
+  //   => true target is negative
+  //     check if current value is bigger than the negative target value
+  //         => true current value is smaller
+  //             increment current value
+  //             WHY ? to get current value closer to target value
+  //         => false
+  //             change the element value to the desired value
+  //             WHY ? using rounding will create "small errors" so the desired value is not attainable
+  //             WHY use rounding, Otherwise app looks ugly.
+  //   => false target is positive
+  //     check if current value is smaller than the positive target value
+  //         => true current value is smaller
+  //             increment current value
+  //             WHY? to get current value closer to target value
+  //         => false
+  //             change the element value to the desired value
+  //             WHY? using rounding will create "small errors" so the desired value is not attainable
+  //             WHY use rounding, Otherwise app looks ugly.
+
+  //             Thinking about this... because of rounding this approach allows for an increment to move past the target value
+  //             Hence the reason for changing the element to the target value at the end. To solve this we need to stop the incrementing process
+  //             one step before.
+
+  let currentVal = parseInt(targetElement.innerText, 10);
+  let incrememtCount = 8;
+  const increment = targetVal / incrememtCount;
+
+  if (targetVal < 0) {
+    if (currentVal > targetVal - increment) {
+      currentVal = +targetElement.innerText + increment;
+      targetElement.innerText = Math.floor(currentVal);
+      setTimeout(() => {
+        animateNumbers(targetVal, targetElement);
+      }, 100);
+    } else {
+      targetElement.innerText = targetVal;
+    }
+  } else {
+    if (currentVal < targetVal - increment) {
+      currentVal = +targetElement.innerText + increment;
+      targetElement.innerText = Math.ceil(currentVal);
+      setTimeout(() => {
+        animateNumbers(targetVal, targetElement);
+      }, 100);
+    } else {
+      targetElement.innerText = targetVal;
+    }
+  }
+}
 function displayValues() {
   //main section
   const temperature = document.querySelector(".js-temperature");
@@ -190,16 +242,21 @@ function displayValues() {
   }
 
   //   without units
+
   location.textContent = `${weather.name}, ${weather.country}`;
   description.textContent = weather.description;
-  temperature.textContent = weather.temperature;
   realFeel.textContent = `${weather.real_feel} °`;
   humidity.textContent = `${weather.humidity} %`;
-  max.textContent = weather.max;
-  min.textContent = weather.min;
   sunrise.textContent = weather.sunrise;
   sunset.textContent = weather.sunset;
   pressure.textContent = `${weather.pressure} hPa`;
+
+  // animate numbers
+  let elements = [temperature, max, min];
+  elements.forEach((element) => (element.innerHTML = "0"));
+  animateNumbers(weather.temperature, temperature);
+  animateNumbers(weather.max, max);
+  animateNumbers(weather.min, min);
 }
 
 function toggleUnits() {
@@ -216,7 +273,6 @@ function setUserPosition() {
     weather.long = position.coords.longitude;
     api.setApiAddress();
     api.fetchApi();
-    displayValues();
   });
 }
 
@@ -231,11 +287,9 @@ function initialize() {
   checkGeolocation();
   api.setApiAddress();
   api.fetchApi();
-  displayValues();
   setInterval(() => {
     api.setApiAddress();
     api.fetchApi();
-    displayValues();
   }, 600000);
 }
 
@@ -254,7 +308,6 @@ window.addEventListener("DOMContentLoaded", () => {
     toggleUnits();
     api.setApiAddress();
     api.fetchApi();
-    displayValues();
   });
 
   searchToggle.addEventListener("click", () => {
@@ -267,7 +320,6 @@ window.addEventListener("DOMContentLoaded", () => {
         weather.query = search.value;
         api.setApiAddress();
         api.fetchApi();
-        displayValues();
         search.value = "";
       }
       search.blur();
@@ -279,7 +331,6 @@ window.addEventListener("DOMContentLoaded", () => {
       weather.query = search.value;
       api.setApiAddress();
       api.fetchApi();
-      displayValues();
       search.value = "";
     }
   });
