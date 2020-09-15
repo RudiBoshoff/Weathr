@@ -139,9 +139,13 @@ nav .menu > i {
   opacity: 0.6;
 }
 
+.graphic__icon {
+  height: 55px;
+  width: 55px;
+}
+
 .graphic__description {
   font-size: 2.4rem;
-  white-space: nowrap;
 }
 
 .temperature {

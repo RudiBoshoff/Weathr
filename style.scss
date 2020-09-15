@@ -113,10 +113,12 @@ nav {
   text-align: center;
   opacity: $opacity--light;
   &__icon {
+    height: 55px;
+    width: 55px;
   }
   &__description {
     font-size: fontSize(normal);
-    white-space: nowrap;
+    // white-space: nowrap;
   }
 }
 

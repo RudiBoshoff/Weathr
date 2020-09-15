@@ -153,7 +153,6 @@ class API {
       .then((serverData) => {
         if (serverData != undefined) {
           this.data = serverData;
-          console.log(api);
           weather.setValues(this.data);
           weather.setIcon();
           displayValues();
@@ -312,7 +311,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const unitToggle = document.querySelector(".js-temperature-toggle");
   const searchToggle = document.querySelector(".js-search");
-  const search = document.querySelector(".search");
+  const search = document.querySelector(".js-input");
+  const logo = document.querySelector(".js-logo");
 
   unitToggle.addEventListener("click", () => {
     toggleUnits();
@@ -345,5 +345,10 @@ window.addEventListener("DOMContentLoaded", () => {
       api.fetchApi();
       search.value = "";
     }
+  });
+
+  logo.addEventListener("click", () => {
+    api.setApiAddress();
+    api.fetchApi();
   });
 });
