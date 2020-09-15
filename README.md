@@ -16,7 +16,7 @@ TODO:
 
 1.  Site needs to be hosted on heroku. (implemented) [Weathr](https://rudi-boshoff-weathr.herokuapp.com/)
 2.  Loading animation of numbers (implemented)
-3.  Logo currently doesn't do anything when you click on it. (implemented - refreshes the data)
+3.  Logo currently doesn't do anything when you click on it. (implemented - manually refreshes the data on click)
 4.  Remember user search and units (implemented)
 5.  Change app colour based on weather and time (rain : blue, snow: white, night: dark etc.)
 

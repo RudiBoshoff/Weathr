@@ -61,6 +61,8 @@ nav {
     position: relative;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    user-select: none;
     &::after {
       content: "";
       display: block;
